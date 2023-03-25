@@ -3,7 +3,7 @@ import useRoutersElement from './useRoutersElement'
 
 function App() {
   const routerElement = useRoutersElement()
-  return <div className='bg-red-400 text-red-500 '>{routerElement}</div>
+  return <div className=''>{routerElement}</div>
 }
 
 export default App
