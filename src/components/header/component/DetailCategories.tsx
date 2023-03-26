@@ -11,7 +11,7 @@ interface IDetaiCategories {
 }
 export default function DetailCategories({ listCategoriesTitle }: IDetaiCategories) {
   return (
-    <div className='flex w-full items-center justify-between bg-red-100'>
+    <div className='flex min-h-[60px] w-full items-center justify-between bg-white'>
       <div className='flex'>
         {listCategoriesTitle.map((categoryItem, index) => {
           return (

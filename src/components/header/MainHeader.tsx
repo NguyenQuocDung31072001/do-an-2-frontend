@@ -20,6 +20,7 @@ export default function MainHeader() {
   //useState
   const [positionHeader, setPositionHeader] = React.useState('0px')
   const [listCategoriesTitleSelected, setListCategoriesTitleSelected] = React.useState<IFakeDataCategories[]>([])
+  const [indexSelected, setIndexSelected] = React.useState<number>()
   //hook
   const { scrollY } = useScroll()
   const { direction } = useCheckScrollDirection()
@@ -29,7 +30,7 @@ export default function MainHeader() {
       if (direction === EnumDirection.UP) {
         setPositionHeader('0px')
       } else {
-        setPositionHeader('-100px')
+        setPositionHeader('-170px')
       }
     } else {
       setPositionHeader('0px')
@@ -50,11 +51,16 @@ export default function MainHeader() {
       </div>
       <div className='grid w-full grid-cols-12  bg-gray-100'>
         <div className='col-span-5 flex items-center justify-start'>
-          {Object.keys(categories).map((categoryTitle) => (
+          {Object.keys(categories).map((categoryTitle, index) => (
             <p
-              className='cursor-pointer px-2 py-4 font-medium text-gray-600'
+              className={`cursor-pointer ${
+                index === indexSelected ? 'bg-white' : 'hover:bg-gray-200'
+              } px-2 py-4 font-medium text-gray-600 `}
               key={categoryTitle}
-              onClick={() => handleGetListCategoriesTitle(categoryTitle)}
+              onClick={() => {
+                handleGetListCategoriesTitle(categoryTitle)
+                setIndexSelected(index)
+              }}
             >
               {categoryTitle}
             </p>

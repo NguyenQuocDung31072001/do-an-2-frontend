@@ -5,10 +5,8 @@ import MainHeader from '../../components/header/MainHeader'
 import MainFooter from '../../components/footer/MainFooter'
 
 export default function HomePages() {
-  console.log('home pages')
-
   return (
-    <div>
+    <div className='bg-gray-100'>
       <MainHeader />
       {Array(50)
         .fill(0)

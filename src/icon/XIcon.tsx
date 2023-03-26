@@ -1,10 +1,7 @@
 import React from 'react'
+import { IPropsIcon } from '../types/icon.types'
 
-interface IPropsXIcon {
-  className: string
-  onClick: any
-}
-export default function XIcon({ className, onClick }: IPropsXIcon) {
+export default function XIcon({ className, onClick = () => {} }: IPropsIcon) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
