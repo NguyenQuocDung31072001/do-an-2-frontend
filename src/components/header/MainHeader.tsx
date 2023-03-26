@@ -6,24 +6,37 @@ import InfoUser from './component/InfoUser'
 //component
 import ShippingInfo from './component/ShippingInfo'
 
-//framed-motion
-import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion'
+//framer-motion
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
+
+//hook
+import useCheckScrollDirection, { EnumDirection } from '../../hook/useCheckScrollDirection'
 
 const categories = ['NỮ', 'NAM', 'ĐỜI SỐNG']
+
 export default function MainHeader() {
+  //hook
+  const [positionHeader, setPositionHeader] = React.useState('0px')
   const { scrollY } = useScroll()
-  // useMotionValueEvent(scrollY, 'change', (latest) => {
-  //   console.log('Page scroll: ', latest)
-  // })
-  const headerOpacity = useTransform(
-    scrollY,
-    [0, 100], // Thay đổi giá trị này để điều chỉnh vị trí hiển thị header
-    [1, 0]
-  )
+  const { direction } = useCheckScrollDirection()
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    if (latest > 500) {
+      if (direction === EnumDirection.UP) {
+        setPositionHeader('0px')
+      } else {
+        setPositionHeader('-100px')
+      }
+    } else {
+      setPositionHeader('0px')
+    }
+  })
+
   return (
     <motion.div
-      style={{ opacity: headerOpacity }}
-      className=' top-[0px] flex w-full flex-col items-center justify-center bg-red-100'
+      animate={{ translateY: positionHeader }}
+      transition={{ duration: 0.2 }}
+      className='fixed top-[0px] z-50 flex w-full flex-col items-center justify-center bg-red-100'
     >
       <div>
         <img src={free_ship_image} className='h-[50px] object-cover' />
