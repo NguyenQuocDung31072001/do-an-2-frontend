@@ -1,10 +1,10 @@
 import React from 'react'
 
 //icon
-import CartIcon from './icon/cart'
-import GlobalIcon from './icon/global'
-import HeartIcon from './icon/heart'
-import ProfileIcon from './icon/profile'
+import CartIcon from '../../../icon/CartIcon'
+import GlobalIcon from '../../../icon/GlobalIcon'
+import HeartIcon from '../../../icon/HeartIcon'
+import ProfileIcon from '../../../icon/ProfileIcon'
 
 export default function InfoUser() {
   return (

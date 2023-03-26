@@ -1,10 +1,11 @@
 import React from 'react'
 //assets
 import free_ship_image from '../../assets/free_ship.png'
-import InfoUser from './component/InfoUser'
 
 //component
 import ShippingInfo from './component/ShippingInfo'
+import InfoUser from './component/InfoUser'
+import DetailCategories from './component/DetailCategories'
 
 //framer-motion
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
@@ -12,11 +13,14 @@ import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 //hook
 import useCheckScrollDirection, { EnumDirection } from '../../hook/useCheckScrollDirection'
 
-const categories = ['NỮ', 'NAM', 'ĐỜI SỐNG']
+//mocks
+import { categories, IFakeDataCategories } from '../../mocks/categories'
 
 export default function MainHeader() {
-  //hook
+  //useState
   const [positionHeader, setPositionHeader] = React.useState('0px')
+  const [listCategoriesTitleSelected, setListCategoriesTitleSelected] = React.useState<IFakeDataCategories[]>([])
+  //hook
   const { scrollY } = useScroll()
   const { direction } = useCheckScrollDirection()
 
@@ -32,20 +36,27 @@ export default function MainHeader() {
     }
   })
 
+  const handleGetListCategoriesTitle = (title: string) => {
+    setListCategoriesTitleSelected(categories[title])
+  }
   return (
     <motion.div
       animate={{ translateY: positionHeader }}
       transition={{ duration: 0.2 }}
-      className='fixed top-[0px] z-50 flex w-full flex-col items-center justify-center bg-red-100'
+      className='fixed top-[0px] z-50 flex w-full flex-col items-center justify-center'
     >
       <div>
         <img src={free_ship_image} className='h-[50px] object-cover' />
       </div>
       <div className='grid w-full grid-cols-12  bg-gray-100'>
         <div className='col-span-5 flex items-center justify-start'>
-          {categories.map((categoryItem, index) => (
-            <p className='cursor-pointer px-2 py-4 font-medium text-gray-600' key={categoryItem}>
-              {categoryItem}
+          {Object.keys(categories).map((categoryTitle) => (
+            <p
+              className='cursor-pointer px-2 py-4 font-medium text-gray-600'
+              key={categoryTitle}
+              onClick={() => handleGetListCategoriesTitle(categoryTitle)}
+            >
+              {categoryTitle}
             </p>
           ))}
         </div>
@@ -57,6 +68,7 @@ export default function MainHeader() {
           <InfoUser />
         </div>
       </div>
+      <DetailCategories listCategoriesTitle={listCategoriesTitleSelected} />
     </motion.div>
   )
 }
