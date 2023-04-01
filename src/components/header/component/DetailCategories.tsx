@@ -16,7 +16,7 @@ export default function DetailCategories({ listCategoriesTitle }: IDetaiCategori
 
   return (
     <div className='flex min-h-[60px] w-full items-center justify-between bg-white'>
-      <div className='flex'>
+      <div className='flex '>
         {listCategoriesTitle.map((categoryItem, index) => {
           return (
             <div key={index} onMouseEnter={() => setCategoryInfoSelected(categoryItem)} className='w-full'>

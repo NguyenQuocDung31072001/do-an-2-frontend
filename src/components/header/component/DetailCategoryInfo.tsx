@@ -1,5 +1,4 @@
 import React from 'react'
-import { useMainHeaderContext } from '../../../context/MainHeaderContext'
 import { IFakeDataCategories } from '../../../mocks/categories'
 
 interface IPropsDetailCategoryInfo {
@@ -8,10 +7,12 @@ interface IPropsDetailCategoryInfo {
 }
 export default function DetailCategoryInfo({ categoryItem, categoryInfoSelected }: IPropsDetailCategoryInfo) {
   const [openInfo, setOpenInfo] = React.useState(false)
+  // const ref = React.useRef<HTMLDivElement>(null)
+  const width = window.innerWidth
 
   return (
     <div
-      className='relative flex flex-col items-center justify-start px-2 pt-4 pb-1'
+      className='flex min-h-[80px] flex-col items-center justify-start px-2 pt-4 pb-1'
       onMouseEnter={() => {
         setOpenInfo(true)
       }}
@@ -22,7 +23,10 @@ export default function DetailCategoryInfo({ categoryItem, categoryInfoSelected 
       <p className='text-[12px] font-medium'>{categoryItem.title}</p>
       <p className='text-[12px] text-gray-600'>{categoryItem.description}</p>
       {openInfo && categoryInfoSelected.title === categoryItem.title && (
-        <div className='absolute top-[55px] flex h-[400px] w-[1000px] items-center justify-center border-t-[1px] border-gray-300 bg-white'>
+        <div
+          className={`flex h-[400px] items-center justify-center border-t-[1px] border-gray-300 bg-white`}
+          style={{ width: width, position: 'fixed', left: 0, top: 180 }}
+        >
           {categoryItem.title}
         </div>
       )}

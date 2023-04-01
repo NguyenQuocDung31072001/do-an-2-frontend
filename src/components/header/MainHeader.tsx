@@ -33,7 +33,7 @@ export default function MainHeader() {
       if (direction === EnumDirection.UP) {
         setPositionHeader('0px')
       } else {
-        setPositionHeader('-170px')
+        setPositionHeader('-200px')
       }
     } else {
       setPositionHeader('0px')
@@ -49,7 +49,7 @@ export default function MainHeader() {
       <motion.div
         animate={{ translateY: positionHeader }}
         transition={{ duration: 0.2 }}
-        className='fixed top-[0px] z-50 flex w-full flex-col items-center justify-center'
+        className='fixed top-0 z-50 flex w-full flex-col items-center justify-center'
       >
         <div>
           <img src={free_ship_image} className='h-[50px] object-cover' />
