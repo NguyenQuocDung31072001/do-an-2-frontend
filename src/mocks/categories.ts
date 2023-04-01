@@ -1,11 +1,45 @@
 export interface IFakeDataCategories {
   title: string
   description?: string
+  children?: any
 }
 
 export const categories: Record<string, IFakeDataCategories[]> = {
-  NỮ: [{ title: 'HÀNG MỚI' }, { title: 'GIẢM GIÁ' }, { title: 'TRANG PHỤC' }, { title: 'ĐỒ ĐI BIỂN' }],
-  NAM: [{ title: 'HÀNG MỚI' }, { title: 'GIẢM GIÁ' }, { title: 'TRANG PHỤC' }, { title: 'ĐỒ ĐI BIỂN' }],
+  NỮ: [
+    {
+      title: 'HÀNG MỚI NỮ',
+      children: {
+        'ÁO BƠI': ['Bộ bikini', 'Bộ bikini', 'Bộ bikini', 'Bộ bikini'],
+        'MUA THEO LOẠI': ['Bộ bikini', 'Bộ bikini', 'Bộ bikini', 'Bộ bikini'],
+        'MUA THEO XU HƯỚNG': ['Bộ bikini', 'Bộ bikini', 'Bộ bikini', 'Bộ bikini']
+      }
+    },
+    {
+      title: 'GIẢM GIÁ NỮ',
+      children: {
+        'ÁO BƠI': ['Bộ bikini', 'Bộ bikini', 'Bộ bikini', 'Bộ bikini'],
+        'MUA THEO LOẠI': ['Bộ bikini', 'Bộ bikini', 'Bộ bikini', 'Bộ bikini'],
+        'MUA THEO XU HƯỚNG': ['Bộ bikini', 'Bộ bikini', 'Bộ bikini', 'Bộ bikini']
+      }
+    },
+    {
+      title: 'TRANG PHỤC NỮ',
+      children: {
+        'ÁO BƠI': ['Bộ bikini', 'Bộ bikini', 'Bộ bikini', 'Bộ bikini'],
+        'MUA THEO LOẠI': ['Bộ bikini', 'Bộ bikini', 'Bộ bikini', 'Bộ bikini'],
+        'MUA THEO XU HƯỚNG': ['Bộ bikini', 'Bộ bikini', 'Bộ bikini', 'Bộ bikini']
+      }
+    },
+    {
+      title: 'ĐỒ ĐI BIỂN NỮ',
+      children: {
+        'ÁO BƠI': ['Bộ bikini', 'Bộ bikini', 'Bộ bikini', 'Bộ bikini'],
+        'MUA THEO LOẠI': ['Bộ bikini', 'Bộ bikini', 'Bộ bikini', 'Bộ bikini'],
+        'MUA THEO XU HƯỚNG': ['Bộ bikini', 'Bộ bikini', 'Bộ bikini', 'Bộ bikini']
+      }
+    }
+  ],
+  NAM: [{ title: 'HÀNG MỚI NAM' }, { title: 'GIẢM GIÁ NAM' }, { title: 'TRANG PHỤC NAM' }, { title: 'ĐỒ ĐI BIỂN NAM' }],
   'TRẺ EM': [
     { title: 'HÀNG MỚI', description: '0-3 tuổi' },
     { title: 'GIẢM GIÁ' },

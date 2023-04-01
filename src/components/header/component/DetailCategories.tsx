@@ -5,19 +5,22 @@ import InputSearch from './InputSearch'
 
 //mocks
 import { IFakeDataCategories } from '../../../mocks/categories'
+import { useMainHeaderContext } from '../../../context/MainHeaderContext'
+import DetailCategoryInfo from './DetailCategoryInfo'
 
 interface IDetaiCategories {
   listCategoriesTitle: IFakeDataCategories[]
 }
 export default function DetailCategories({ listCategoriesTitle }: IDetaiCategories) {
+  const [categoryInfoSelected, setCategoryInfoSelected] = React.useState<IFakeDataCategories>({} as IFakeDataCategories)
+
   return (
     <div className='flex min-h-[60px] w-full items-center justify-between bg-white'>
       <div className='flex'>
         {listCategoriesTitle.map((categoryItem, index) => {
           return (
-            <div className='flex flex-col items-center justify-start px-2 pt-4 pb-1' key={index}>
-              <p className='text-[12px] font-medium'>{categoryItem.title}</p>
-              <p className='text-[12px] text-gray-600'>{categoryItem.description}</p>
+            <div key={index} onMouseEnter={() => setCategoryInfoSelected(categoryItem)} className='w-full'>
+              <DetailCategoryInfo categoryItem={categoryItem} categoryInfoSelected={categoryInfoSelected} />
             </div>
           )
         })}
