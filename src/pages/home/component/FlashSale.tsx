@@ -6,33 +6,33 @@ import ProductFlashSale from '../../../components/product/ProductFlashSale'
 import { ProductSaleMockData } from '../../../mocks/product/productSale'
 import Slider from 'react-slick'
 import ChevronRightIcon from '../../../icon/ChevronRightIcon'
-// import ChevronLeftIcon from '../../../icon/ChevronLeftIcon'
+import ChevronLeftIcon from '../../../icon/ChevronLeftIcon'
 
-function NextArrow(props: any) {
-  const { className, style, onClick } = props
+// function NextArrow(props: any) {
+//   const { className, style, onClick } = props
 
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: 'block'
-      }}
-      onClick={onClick}
-    >
-      <img src='https://www.svgrepo.com/show/154448/next-arrow.svg' alt='' />
-    </div>
-  )
-}
-function PrevArrow(props: any) {
-  const { className, style, onClick } = props
-  return <div className={className} style={{ ...style, display: 'block', background: 'red' }} onClick={onClick} />
-}
+//   return (
+//     <div
+//       className={className}
+//       style={{
+//         ...style,
+//         display: 'block'
+//       }}
+//       onClick={onClick}
+//     >
+//       <img src='https://www.svgrepo.com/show/154448/next-arrow.svg' alt='' />
+//     </div>
+//   )
+// }
+// function PrevArrow(props: any) {
+//   const { className, style, onClick } = props
+//   return <div className={className} style={{ ...style, display: 'block', background: 'red' }} onClick={onClick} />
+// }
 
 export default function FlashSale() {
   const sliderRef = React.useRef<Slider>(null)
   const [listProductFlashSale, setListProductFlashSale] = React.useState(ProductSaleMockData)
-  console.log({ sliderRef: sliderRef.current })
+
   return (
     <div className='w-full'>
       <div className='my-4 flex w-full items-center justify-between'>
@@ -41,20 +41,18 @@ export default function FlashSale() {
       <div className='relative'>
         <Slider
           ref={sliderRef}
-          arrows={true}
+          arrows={false}
           dots={false}
           infinite={false}
           speed={500}
           slidesToShow={6}
           slidesToScroll={6}
-          nextArrow={<NextArrow />}
-          prevArrow={<PrevArrow />}
         >
           {listProductFlashSale.map((productFlashSale, index) => {
             return <ProductFlashSale key={index} productFlashSale={productFlashSale} />
           })}
         </Slider>
-        {/* <div
+        <div
           className='absolute left-[10px] top-[50%] translate-y-[-50%]  cursor-pointer rounded-[50%] bg-gray-200  p-2 hover:bg-gray-500 '
           onClick={() => sliderRef?.current?.slickPrev()}
         >
@@ -65,7 +63,7 @@ export default function FlashSale() {
           onClick={() => sliderRef?.current?.slickNext()}
         >
           <ChevronRightIcon className='h-4 w-4' />
-        </div> */}
+        </div>
       </div>
     </div>
   )

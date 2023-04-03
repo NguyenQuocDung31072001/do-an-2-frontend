@@ -5,6 +5,7 @@ import MainHeader from '../../components/header/MainHeader'
 import MainFooter from '../../components/footer/MainFooter'
 import SaleOffAnnouncement from './component/SaleOffAnnouncement'
 import FlashSale from './component/FlashSale'
+import NewProduct from './component/NewProduct'
 
 export default function HomePages() {
   return (
@@ -12,7 +13,8 @@ export default function HomePages() {
       <MainHeader />
       <SaleOffAnnouncement />
       <FlashSale />
-      {Array(50)
+      <NewProduct />
+      {/* {Array(50)
         .fill(0)
         .map((_, index) => {
           return (
@@ -20,7 +22,7 @@ export default function HomePages() {
               {index}
             </div>
           )
-        })}
+        })} */}
       <MainFooter />
     </div>
   )
