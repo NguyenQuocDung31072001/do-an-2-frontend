@@ -5,8 +5,8 @@ import React from 'react'
 import ProductFlashSale from '../../../components/product/ProductFlashSale'
 import { ProductSaleMockData } from '../../../mocks/product/productSale'
 import Slider from 'react-slick'
-import ChevronRightIcon from '../../../icon/ChevronRightIcon'
-import ChevronLeftIcon from '../../../icon/ChevronLeftIcon'
+import ChevronRightIcon from '../../../icon/chevron/ChevronRightIcon'
+import ChevronLeftIcon from '../../../icon/chevron/ChevronLeftIcon'
 
 // function NextArrow(props: any) {
 //   const { className, style, onClick } = props

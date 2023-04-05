@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SaleOffAnnouncement() {
   return (
-    <div className='mt-[180px]'>
+    <div>
       <div className=' grid w-full grid-cols-3'>
         <img
           src='https://img.ltwebstatic.com/images3_acp/2022/07/26/16588204127699a64bacb294dfe5344295027a2eaa_thumbnail_900x.webp'

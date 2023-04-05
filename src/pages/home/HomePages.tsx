@@ -11,18 +11,10 @@ export default function HomePages() {
   return (
     <div className='flex flex-col items-center bg-gray-100 px-16'>
       <MainHeader />
+      <div className='mt-[180px]' w-full />
       <SaleOffAnnouncement />
       <FlashSale />
       <NewProduct />
-      {/* {Array(50)
-        .fill(0)
-        .map((_, index) => {
-          return (
-            <div key={index} className='p-10'>
-              {index}
-            </div>
-          )
-        })} */}
       <MainFooter />
     </div>
   )
