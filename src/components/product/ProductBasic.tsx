@@ -3,35 +3,48 @@ import { IProductInfoMocks } from '../../mocks/product/productInfo'
 import { motion } from 'framer-motion'
 import HeartIcon from '../../icon/HeartIcon'
 import HeartFillIcon from '../../icon/HeartFillIcon'
+import { AnimatePresence } from 'framer-motion'
 
 interface IProps {
   product: IProductInfoMocks
 }
 export default function ProductBasic({ product }: IProps) {
   const [imageUrl, setImageUrl] = React.useState<string>(product.imageProduct[0])
+  const [delayHandler, setDelayHandler] = React.useState<any>()
+
   const [dataProduct, setDataProduct] = React.useState<IProductInfoMocks>(product)
 
   const price = dataProduct.price.toLocaleString('vi', { style: 'currency', currency: 'VND' })
 
   const handleMouseEnter = () => {
-    setImageUrl(dataProduct.imageProduct[1])
+    setDelayHandler(
+      setTimeout(() => {
+        setImageUrl(dataProduct.imageProduct[1])
+      }, 300)
+    )
   }
   const handleMouseLeave = () => {
     setImageUrl(dataProduct.imageProduct[0])
+    clearTimeout(delayHandler)
   }
+
   return (
     <div className='relative mx-2'>
-      <motion.img
-        key={imageUrl}
-        initial={{ opacity: 0.4 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        src={imageUrl}
-        className='cursor-pointer'
-        alt=''
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      />
+      <AnimatePresence mode='wait'>
+        <motion.img
+          key={imageUrl}
+          initial={{ opacity: 0.6 }}
+          animate={{
+            opacity: 1
+          }}
+          exit={{ opacity: 0.8 }}
+          transition={{ duration: 0.2 }}
+          src={imageUrl}
+          className='cursor-pointer'
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        />
+      </AnimatePresence>
       <p className='absolute right-2 top-2 text-black/80'>New</p>
       <p className='mt-2 text-[12px] font-normal text-gray-500'>{dataProduct.productName}</p>
       <div className='flex items-center justify-between'>
