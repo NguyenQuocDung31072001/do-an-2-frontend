@@ -44,7 +44,7 @@ export default function SortProductList() {
             initial={{ opacity: 0, translateY: '-10px' }}
             animate={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.2 }}
-            className='absolute top-10 w-[170px] drop-shadow-2xl'
+            className='absolute top-10 z-50 w-[170px] drop-shadow-2xl'
           >
             {categorySort.map((data, index) => {
               return (

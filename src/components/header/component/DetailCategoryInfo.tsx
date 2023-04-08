@@ -1,5 +1,5 @@
 import React from 'react'
-import { IFakeDataCategories } from '../../../mocks/categories'
+import { IFakeDataCategories } from '../../../mocks/category/categories'
 
 interface IPropsDetailCategoryInfo {
   categoryItem: IFakeDataCategories

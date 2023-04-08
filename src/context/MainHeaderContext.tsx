@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, createContext } from 'react'
-import { IFakeDataCategories } from '../mocks/categories'
+import { IFakeDataCategories } from '../mocks/category/categories'
 
 interface MainHeaderContextProps {
   detailCategoryInfo: IFakeDataCategories

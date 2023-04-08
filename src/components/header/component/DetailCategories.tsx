@@ -4,7 +4,7 @@ import React from 'react'
 import InputSearch from './InputSearch'
 
 //mocks
-import { IFakeDataCategories } from '../../../mocks/categories'
+import { IFakeDataCategories } from '../../../mocks/category/categories'
 import { useMainHeaderContext } from '../../../context/MainHeaderContext'
 import DetailCategoryInfo from './DetailCategoryInfo'
 

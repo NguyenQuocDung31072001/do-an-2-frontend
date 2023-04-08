@@ -15,14 +15,14 @@ export default function ProductList() {
   return (
     <div className='flex flex-col items-center bg-white px-16'>
       <MainHeader />
-      <div className='mt-[180px]' w-full />
+      <div className='mt-[180px]' />
       <Slogan />
       <div className='flex w-full items-center justify-end py-4'>
         <SortProductList />
       </div>
       <div className='flex w-full'>
         <SideBarFilter />
-        <div className='grid w-full grid-cols-4 '>
+        <div className='grid h-full w-full grid-cols-4 '>
           {listProduct.map((product, index) => {
             return (
               <div key={index} className='mb-12'>

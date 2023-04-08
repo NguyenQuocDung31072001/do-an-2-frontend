@@ -14,7 +14,7 @@ import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import useCheckScrollDirection, { EnumDirection } from '../../hook/useCheckScrollDirection'
 
 //mocks
-import { categories, IFakeDataCategories } from '../../mocks/categories'
+import { categories, IFakeDataCategories } from '../../mocks/category/categories'
 import DetailCategoryInfo from './component/DetailCategoryInfo'
 import { MainHeaderContextProvider } from '../../context/MainHeaderContext'
 
