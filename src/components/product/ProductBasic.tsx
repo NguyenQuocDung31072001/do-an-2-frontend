@@ -47,7 +47,7 @@ export default function ProductBasic({ product, isShowAddCart = false }: IProps)
             onMouseLeave={handleMouseLeave}
           />
           {isShowAddCart && (
-            <div className='absolute bottom-10 left-[50%] flex h-[20px] w-[180px] translate-x-[-50%] cursor-pointer items-center justify-center overflow-hidden bg-white p-6 font-semibold text-black opacity-0 duration-300 hover:scale-110 group-hover:opacity-100'>
+            <div className='absolute bottom-10 left-[50%] flex h-[20px] w-[80%] translate-x-[-50%] cursor-pointer items-center justify-center overflow-hidden bg-white p-6 font-semibold text-black opacity-0 duration-300 hover:scale-110 group-hover:opacity-100'>
               <p className='truncate'>Thêm Vào Giỏ Hàng</p>
             </div>
           )}

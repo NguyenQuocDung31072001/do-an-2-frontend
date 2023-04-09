@@ -16,13 +16,6 @@ export default function NewProduct() {
           return <ProductBasic key={index} product={product} />
         })}
       </div>
-      <div
-        className='group mt-4 flex cursor-pointer items-center justify-center border-[1px] border-black/80 px-8 py-2'
-        onClick={() => navigate('product-list')}
-      >
-        <p className=' font-semibold group-hover:scale-105'>Xem tất cả </p>
-        <ChevronRightIcon className='ml-2 h-4 w-4  group-hover:scale-x-125' />
-      </div>
     </div>
   )
 }
