@@ -17,15 +17,15 @@ export default function ProductBasic({ product }: IProps) {
   const price = dataProduct.price.toLocaleString('vi', { style: 'currency', currency: 'VND' })
 
   const handleMouseEnter = () => {
-    setDelayHandler(
-      setTimeout(() => {
-        setImageUrl(dataProduct.imageProduct[1])
-      }, 300)
-    )
+    setImageUrl(dataProduct.imageProduct[1])
+    // setDelayHandler(
+    //   setTimeout(() => {
+    //   }, 100)
+    // )
   }
   const handleMouseLeave = () => {
     setImageUrl(dataProduct.imageProduct[0])
-    clearTimeout(delayHandler)
+    // clearTimeout(delayHandler)
   }
 
   return (
@@ -33,12 +33,12 @@ export default function ProductBasic({ product }: IProps) {
       <AnimatePresence mode='wait'>
         <motion.img
           key={imageUrl}
-          initial={{ opacity: 0.6 }}
-          animate={{
-            opacity: 1
-          }}
-          exit={{ opacity: 0.8 }}
-          transition={{ duration: 0.2 }}
+          // initial={{ opacity: 0.6 }}
+          // animate={{
+          //   opacity: 1
+          // }}
+          // exit={{ opacity: 0.6 }}
+          // transition={{ duration: 0.2 }}
           src={imageUrl}
           className='cursor-pointer'
           onMouseEnter={handleMouseEnter}

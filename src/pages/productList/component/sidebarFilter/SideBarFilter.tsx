@@ -1,4 +1,5 @@
 import DoubleRangeSlider from '../../../../components/input/DoubleRangeSlider'
+import MultiRangeSlider from '../../../../components/input/MultiRangerSlider'
 import { MocksDataFilter } from '../../../../mocks/category/dataFilter'
 import FilterWrapperItem from './component/FilterWarpperItem'
 
@@ -12,12 +13,13 @@ export default function SideBarFilter() {
           </div>
         )
       })}
-      <DoubleRangeSlider />
-      {/* {Array(50)
-        .fill(0)
-        .map((data, index) => {
-          return <div key={index}>{data + index}</div>
-        })} */}
+      <MultiRangeSlider
+        min={0}
+        max={1000}
+        onChange={({ min, max }) => {
+          console.log(`min = ${min}, max = ${max}`)
+        }}
+      />
     </div>
   )
 }
