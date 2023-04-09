@@ -26,7 +26,7 @@ export default function ProductList() {
           {listProduct.map((product, index) => {
             return (
               <div key={index} className='mb-12'>
-                <ProductBasic product={product} />
+                <ProductBasic product={product} isShowAddCart />
               </div>
             )
           })}
