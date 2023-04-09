@@ -12,7 +12,7 @@ export default function FilterWrapperItem({ nameHeaderFilter }: IPropsFilterWrap
   const [open, setOpen] = React.useState<boolean>(false)
   return (
     <div className=''>
-      <div className='flex cursor-pointer items-center justify-between' onClick={() => setOpen(!open)}>
+      <div className='flex cursor-pointer items-center justify-between py-4' onClick={() => setOpen(!open)}>
         <p className='text-[14px] font-medium'>{nameHeaderFilter}</p>
         {MocksDataFilter[nameHeaderFilter].length > 0 && (
           <div>{open ? <MinusIcon className='h-3 w-3 ' /> : <PlusIcon className='h-3 w-3 ' />}</div>

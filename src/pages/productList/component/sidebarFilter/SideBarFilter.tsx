@@ -13,11 +13,12 @@ export default function SideBarFilter() {
           </div>
         )
       })}
+      <p className='mt-4 text-[14px] font-medium'>Sắp Xếp Giá Cả (VND)</p>
       <MultiRangeSlider
         min={0}
-        max={1000}
+        max={10000000}
         onChange={({ min, max }) => {
-          console.log(`min = ${min}, max = ${max}`)
+          // console.log(`min = ${min}, max = ${max}`)
         }}
       />
     </div>
