@@ -6,6 +6,7 @@ import { useRoutes } from 'react-router-dom'
 //pages
 import HomePages from './pages/home/HomePages'
 import ProductList from './pages/productList/ProductList'
+import ProductDetail from './pages/productDetail/ProductDetail'
 
 //components
 
@@ -18,6 +19,10 @@ export default function useRoutersElement() {
     {
       path: '/product-list',
       element: <ProductList />
+    },
+    {
+      path: '/product-detail',
+      element: <ProductDetail />
     }
     // { path: "team", element: <AboutPage /> },
   ])
