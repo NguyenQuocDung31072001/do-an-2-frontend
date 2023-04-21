@@ -29,7 +29,10 @@ export default function DetailProduct() {
         <p className='ml-2 bg-yellow-500 px-1 text-[12px]'>-46%</p>
       </div>
       <div className='my-8 h-2 w-full border-t-[1px] border-dashed border-gray-300'></div>
-      <div className='flex items-center'>
+      <div className='flex w-[250px] cursor-pointer items-center justify-center bg-black p-4 text-[20px] font-semibold text-white hover:bg-black/70'>
+        Thêm vào giỏ hàng
+      </div>
+      {/* <div className='flex items-center'>
         <p>Số lượng</p>
         <div className='mx-16 flex'>
           <div
@@ -61,7 +64,7 @@ export default function DetailProduct() {
           </div>
         </div>
         <p>17 sản phẩm có sẵn</p>
-      </div>
+      </div> */}
     </div>
   )
 }
