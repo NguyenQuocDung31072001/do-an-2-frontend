@@ -24,7 +24,6 @@ export default function useRoutersElement() {
       path: '/product-detail',
       element: <ProductDetail />
     }
-    // { path: "team", element: <AboutPage /> },
   ])
 
   return routerElement

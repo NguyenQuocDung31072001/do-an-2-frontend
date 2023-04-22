@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 interface IPropsRadioButton {
   id: string
-  title: string
+  title: string | ReactNode
   radioClassName?: string
   titleClassName?: string
 }

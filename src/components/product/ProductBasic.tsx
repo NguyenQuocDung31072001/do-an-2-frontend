@@ -4,12 +4,14 @@ import { motion } from 'framer-motion'
 import HeartIcon from '../../icon/HeartIcon'
 import HeartFillIcon from '../../icon/HeartFillIcon'
 import { AnimatePresence } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 interface IProps {
   product: IProductInfoMocks
   isShowAddCart?: boolean
 }
 export default function ProductBasic({ product, isShowAddCart = false }: IProps) {
+  const navigate = useNavigate()
   const [imageUrl, setImageUrl] = React.useState<string>(product.imageProduct[0])
   const [delayHandler, setDelayHandler] = React.useState<any>()
 
@@ -45,6 +47,7 @@ export default function ProductBasic({ product, isShowAddCart = false }: IProps)
             className='cursor-pointer '
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={() => navigate('/product-detail')}
           />
           {isShowAddCart && (
             <div className='absolute bottom-10 left-[50%] flex h-[20px] w-[80%] translate-x-[-50%] cursor-pointer items-center justify-center overflow-hidden bg-white p-6 font-semibold text-black opacity-0 duration-300 hover:scale-110 group-hover:opacity-100'>

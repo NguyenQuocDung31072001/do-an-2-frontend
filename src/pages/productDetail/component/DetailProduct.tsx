@@ -1,5 +1,5 @@
 import React from 'react'
-import StarIcon from '../../../icon/StarIcon'
+import ProductRating from '../../../components/ProductRating'
 
 export default function DetailProduct() {
   const [quantity, setQuantity] = React.useState(1)
@@ -12,11 +12,7 @@ export default function DetailProduct() {
       <div className='flex justify-between'>
         <p className='text-[12px] text-gray-500'>SKU: sk2211291200052315</p>
         <div className='flex items-center'>
-          <StarIcon className='h-4 w-4 text-yellow-400' />
-          <StarIcon className='h-4 w-4 text-yellow-400' />
-          <StarIcon className='h-4 w-4 text-yellow-400' />
-          <StarIcon className='h-4 w-4 text-yellow-400' />
-          <StarIcon className='h-4 w-4 text-yellow-400' />
+          <ProductRating rating={4.5} />
           <p className='text-yellow-400'>(32 Nhận xét)</p>
         </div>
       </div>

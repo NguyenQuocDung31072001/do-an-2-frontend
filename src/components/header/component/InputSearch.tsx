@@ -8,7 +8,7 @@ export default function InputSearch() {
   const inputElt = React.useRef(null)
   const [value, setValue] = React.useState<string>('')
   return (
-    <div className='relative mr-10 flex items-center'>
+    <div className='relative z-0 mr-10 flex items-center'>
       <input
         ref={inputElt}
         type='text'

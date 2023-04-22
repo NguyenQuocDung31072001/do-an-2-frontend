@@ -1,0 +1,126 @@
+import React from 'react'
+import { CartMockData } from '../../mocks/cart/CartMockData'
+import ReactDOM from 'react-dom'
+import CheckboxButton from '../button/CheckBoxButton'
+
+export default function MiniCart() {
+  const root = document.getElementById('root') as HTMLElement
+  const totalPrice = 0
+  return (
+    <div>
+      <div className='max-h-[500px] overflow-y-scroll'>
+        <div className='flex w-[100px]'>
+          <CheckboxButton
+            id='mini-cart'
+            title={
+              <div className='flex items-center'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  strokeWidth={1.5}
+                  stroke='currentColor'
+                  className='h-4 w-4 font-bold'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    d='M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z'
+                  />
+                </svg>
+                <p className='text-[14px] font-bold'>Đồ án 2</p>
+              </div>
+            }
+          />
+        </div>
+        {CartMockData.map((data, index) => {
+          return (
+            <div key={index} className='my-3 flex'>
+              <CheckboxButton
+                id='mini-cart'
+                title={
+                  <div className='my-3 flex'>
+                    <div className='mr-4'>
+                      <img src={data.image} alt='' className='h-[120px] w-[90px] object-cover' />
+                    </div>
+                    <div>
+                      <p className='text-[12px] text-gray-400'>{data.productName}</p>
+                      <p className='text-[14px] font-semibold text-black'>
+                        {data.price.toLocaleString('vi', {
+                          style: 'currency',
+                          currency: 'VND'
+                        })}
+                      </p>
+                      <div className='mt-4 flex items-center justify-between'>
+                        <QuantityController />
+                        <div className='flex items-center'>
+                          <p className='text-[12px] text-gray-500'>Tổng cộng:</p>
+                          <p className='text-[12px] font-semibold text-black'>
+                            {data.price.toLocaleString('vi', {
+                              style: 'currency',
+                              currency: 'VND'
+                            })}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                }
+              />
+            </div>
+          )
+        })}
+      </div>
+      <div className='flex items-center justify-between pr-4'>
+        <CheckboxButton id='mini-cart' title='Tất cả' />
+        <div className='flex items-center'>
+          <p className='text-[14px] text-gray-500'>Tổng cộng:</p>
+          <p>
+            {totalPrice.toLocaleString('vi', {
+              style: 'currency',
+              currency: 'VND'
+            })}
+          </p>
+        </div>
+      </div>
+      <div className='mt-4 flex cursor-pointer items-center justify-center bg-black py-2 text-white'>
+        <p>Xem giỏ hàng</p>
+      </div>
+    </div>
+  )
+  return ReactDOM.createPortal(
+    <div className='z-auto bg-white'>
+      {CartMockData.map((data, index) => {
+        return (
+          <div key={index} className='flex'>
+            <div>
+              <img src={data.image} alt='' className='h-[120px] w-[90px] object-cover' />
+            </div>
+            <div>
+              <p>{data.productName}</p>
+              <p>{data.price}</p>
+            </div>
+          </div>
+        )
+      })}
+    </div>,
+    root
+  )
+}
+
+function QuantityController() {
+  return (
+    <div className='flex'>
+      <div className='cursor-pointer rounded-tl-[10px] rounded-bl-[10px] border-[1px] border-r-0 border-gray-300  px-2'>
+        -
+      </div>
+      <input
+        className='w-[30px] border-[1px] border-gray-300 px-2 text-[12px] text-gray-600 focus:outline-none'
+        defaultValue={0}
+      />
+      <div className='cursor-pointer rounded-tr-[10px] rounded-br-[10px] border-[1px] border-l-0 border-gray-300  px-2'>
+        +
+      </div>{' '}
+    </div>
+  )
+}

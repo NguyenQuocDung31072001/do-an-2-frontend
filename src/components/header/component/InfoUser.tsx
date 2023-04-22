@@ -5,6 +5,7 @@ import CartIcon from '../../../icon/CartIcon'
 import GlobalIcon from '../../../icon/GlobalIcon'
 import HeartIcon from '../../../icon/HeartIcon'
 import ProfileIcon from '../../../icon/ProfileIcon'
+import MenuHeader from '../../menu/MenuHeader'
 
 export default function InfoUser() {
   return (
@@ -13,7 +14,7 @@ export default function InfoUser() {
         <ProfileIcon />
       </div>
       <div className='px-2 font-medium'>
-        <CartIcon />
+        <MenuHeader />
       </div>
       <div className='px-2 font-medium'>
         <HeartIcon />

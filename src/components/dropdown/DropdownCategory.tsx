@@ -19,7 +19,7 @@ export default function DropdownCategory({ title, dataList, classNameItem, class
       return (
         <div
           key={index}
-          className={`${styleChildren} ${activeKey === index ? 'bg-gray-200' : ''}`}
+          className={`${styleChildren} ${activeKey === index ? 'bg-gray-200' : 'bg-white'}`}
           onMouseEnter={() => setActiveKey(index)}
           onMouseLeave={() => setActiveKey('')}
         >
