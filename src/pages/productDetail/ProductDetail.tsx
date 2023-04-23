@@ -58,7 +58,7 @@ export default function ProductDetail() {
         <div className='mt-[50px] w-full '>
           <p className='text-[24px] font-bold'>Khách hàng đánh giá (100 +)</p>
         </div>
-        <div className='my-4 w-full bg-gray-200 p-4'>
+        <div className='my-4 w-full bg-gray-100 p-4'>
           <div>
             <p className='py-4'>Đánh giá trung bình</p>
             <div className='flex items-center py-2'>

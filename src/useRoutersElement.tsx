@@ -8,6 +8,7 @@ import HomePages from './pages/home/HomePages'
 import ProductList from './pages/productList/ProductList'
 import ProductDetail from './pages/productDetail/ProductDetail'
 import CartPages from './pages/cart/CartPages'
+import AuthPages from './pages/auth/AuthPages'
 
 //components
 
@@ -28,6 +29,10 @@ export default function useRoutersElement() {
     {
       path: '/cart',
       element: <CartPages />
+    },
+    {
+      path: '/auth',
+      element: <AuthPages />
     }
   ])
 

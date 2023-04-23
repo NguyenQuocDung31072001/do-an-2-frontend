@@ -17,6 +17,7 @@ import useCheckScrollDirection, { EnumDirection } from '../../hook/useCheckScrol
 import { categories, IFakeDataCategories } from '../../mocks/category/categories'
 import DetailCategoryInfo from './component/DetailCategoryInfo'
 import { MainHeaderContextProvider } from '../../context/MainHeaderContext'
+import { useNavigate } from 'react-router-dom'
 
 export default function MainHeader() {
   //useState
@@ -24,6 +25,7 @@ export default function MainHeader() {
   const [listCategoriesTitleSelected, setListCategoriesTitleSelected] = React.useState<IFakeDataCategories[]>([])
   const [indexSelected, setIndexSelected] = React.useState<number>()
   //hook
+  const navigate = useNavigate()
 
   const { scrollY } = useScroll()
   const { direction } = useCheckScrollDirection()
@@ -52,7 +54,10 @@ export default function MainHeader() {
         className='fixed top-0 z-50 flex w-full flex-col items-center justify-center'
       >
         <div>
-          <img src={free_ship_image} className='h-[50px] object-cover' />
+          <img
+            src={'https://img.ltwebstatic.com/images3_ccc/2023/04/20/16819701378d55cbec6d8e1fddccd78f8f287faf5c.gif'}
+            className='h-[50px] object-cover'
+          />
         </div>
         <div className='grid w-full grid-cols-12  bg-gray-100'>
           <div className='col-span-5 flex items-center justify-start'>
@@ -71,7 +76,14 @@ export default function MainHeader() {
               </p>
             ))}
           </div>
-          <div className='col-span-2 flex items-center justify-center font-semibold text-gray-800'>Đồ án 2</div>
+          <div
+            className='col-span-2 flex cursor-pointer items-center justify-center text-[24px] font-bold text-gray-800'
+            onClick={() => {
+              navigate('/')
+            }}
+          >
+            Đồ án 2
+          </div>
           <div className='col-span-2 flex items-center justify-start'>
             <ShippingInfo />
           </div>

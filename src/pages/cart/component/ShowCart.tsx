@@ -89,7 +89,7 @@ export default function ShowCart() {
         <div className='my-4 h-1 w-full' />
         <div className='w-full bg-gray-100'>
           <div className='my-2 h-1 w-full' />
-          <div className='m-4 bg-gray-300 p-4'>
+          <div className='m-4'>
             <p className='font-bold'>Bán hết</p>
           </div>
           {productIsOutOfStock.map((cartData, index) => {
