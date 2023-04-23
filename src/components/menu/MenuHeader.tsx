@@ -9,7 +9,7 @@ export default function MenuHeader() {
     <div onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)} className='relative'>
       <CartIcon />
       {open && (
-        <div className='absolute left-[-200px] w-[350px] bg-white p-4 shadow-xl'>
+        <div className='absolute left-[-200px] w-[380px] bg-white p-4 shadow-xl'>
           <MiniCart />
         </div>
       )}

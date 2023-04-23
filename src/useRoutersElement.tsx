@@ -7,6 +7,7 @@ import { useRoutes } from 'react-router-dom'
 import HomePages from './pages/home/HomePages'
 import ProductList from './pages/productList/ProductList'
 import ProductDetail from './pages/productDetail/ProductDetail'
+import CartPages from './pages/cart/CartPages'
 
 //components
 
@@ -23,6 +24,10 @@ export default function useRoutersElement() {
     {
       path: '/product-detail',
       element: <ProductDetail />
+    },
+    {
+      path: '/cart',
+      element: <CartPages />
     }
   ])
 

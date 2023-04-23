@@ -1,10 +1,11 @@
 import React from 'react'
 import ProductRating from '../../../components/ProductRating'
+import { convertToVNPrice } from '../../../utils/string'
 
 export default function DetailProduct() {
   const [quantity, setQuantity] = React.useState(1)
-  const currentPrice = (76200 as number).toLocaleString('vi', { style: 'currency', currency: 'VND' })
-  const prevPrice = (140000 as number).toLocaleString('vi', { style: 'currency', currency: 'VND' })
+  const currentPrice = convertToVNPrice(76200)
+  const prevPrice = convertToVNPrice(140000)
 
   return (
     <div>

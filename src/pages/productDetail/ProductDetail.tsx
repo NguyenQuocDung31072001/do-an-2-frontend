@@ -5,6 +5,7 @@ import DetailProduct from './component/DetailProduct'
 import DropdownCategory from '../../components/dropdown/DropdownCategory'
 import ProductRating from '../../components/ProductRating'
 import LikeSolidIcon from '../../icon/LikeSolidIcon'
+import React from 'react'
 
 const Comments = [
   {
@@ -36,6 +37,9 @@ const Comments = [
   }
 ]
 export default function ProductDetail() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className='flex flex-col items-center bg-white px-48'>
       <MainHeader />

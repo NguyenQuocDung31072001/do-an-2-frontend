@@ -19,6 +19,10 @@ export default function ProductList() {
 
   const [listProduct, setListProduct] = React.useState<IProductInfoMocks[]>(ProductInfo)
 
+  //useEffect
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className='flex flex-col items-center bg-white px-16'>
       <MainHeader />

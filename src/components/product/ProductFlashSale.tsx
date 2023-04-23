@@ -2,17 +2,15 @@ import React from 'react'
 import { IMockProductSaleData } from '../../mocks/product/productSale'
 import BoltIcon from '../../icon/BoltIcon'
 import { useNavigate } from 'react-router-dom'
+import { convertToVNPrice } from '../../utils/string'
 
 interface IProps {
   productFlashSale: IMockProductSaleData
 }
 export default function ProductFlashSale({ productFlashSale }: IProps) {
   const navigate = useNavigate()
-  const price = productFlashSale.price.toLocaleString('vi', { style: 'currency', currency: 'VND' })
-  const currentPrice = ((productFlashSale.price * (100 - productFlashSale.percentSaleOff)) / 100).toLocaleString('vi', {
-    style: 'currency',
-    currency: 'VND'
-  })
+  const price = convertToVNPrice(productFlashSale.price)
+  const currentPrice = convertToVNPrice((productFlashSale.price * (100 - productFlashSale.percentSaleOff)) / 100)
   const percentCurrentQuantityOfTotal = (productFlashSale.currentQuantity / productFlashSale.totalQuantity) * 100
 
   return (

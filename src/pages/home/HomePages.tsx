@@ -11,7 +11,10 @@ import ChevronRightIcon from '../../icon/chevron/ChevronRightIcon'
 
 export default function HomePages() {
   const navigate = useNavigate()
-
+  //useEffect
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className='flex flex-col items-center bg-gray-100 px-16'>
       <MainHeader />

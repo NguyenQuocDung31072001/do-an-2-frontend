@@ -1,6 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import './css/multiRangeSlider.css'
+import { convertToVNPrice } from '../../utils/string'
 
 interface IPropsMultiRangerSlider {
   min: number
@@ -77,18 +78,8 @@ const MultiRangeSlider = ({ min, max, onChange }: IPropsMultiRangerSlider) => {
       <div className='slider'>
         <div className='slider__track' />
         <div ref={range} className='slider__range' />
-        <div className='slider__left-value'>
-          {minVal.toLocaleString('vi', {
-            style: 'currency',
-            currency: 'VND'
-          })}
-        </div>
-        <div className='slider__right-value'>
-          {maxVal.toLocaleString('vi', {
-            style: 'currency',
-            currency: 'VND'
-          })}
-        </div>
+        <div className='slider__left-value'>{convertToVNPrice(minVal)}</div>
+        <div className='slider__right-value'>{convertToVNPrice(maxVal)}</div>
       </div>
     </div>
   )

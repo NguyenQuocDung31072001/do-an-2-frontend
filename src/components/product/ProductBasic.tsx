@@ -5,6 +5,7 @@ import HeartIcon from '../../icon/HeartIcon'
 import HeartFillIcon from '../../icon/HeartFillIcon'
 import { AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
+import { convertToVNPrice } from '../../utils/string'
 
 interface IProps {
   product: IProductInfoMocks
@@ -17,7 +18,7 @@ export default function ProductBasic({ product, isShowAddCart = false }: IProps)
 
   const [dataProduct, setDataProduct] = React.useState<IProductInfoMocks>(product)
 
-  const price = dataProduct.price.toLocaleString('vi', { style: 'currency', currency: 'VND' })
+  const price = convertToVNPrice(dataProduct.price)
 
   const handleMouseEnter = () => {
     setImageUrl(dataProduct.imageProduct[1])
