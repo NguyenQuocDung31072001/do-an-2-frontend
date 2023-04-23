@@ -40,7 +40,7 @@ export default function MiniCart() {
               <div className='my-3 flex'>
                 <div className='relative mr-4'>
                   <img src={data.image} alt='' className='h-[120px] w-[120px] object-cover' />
-                  <div className='absolute bottom-0 w-full bg-red-400 py-1 text-[12px] text-white'>
+                  <div className='absolute bottom-0 flex w-full items-center justify-center bg-orange-400 py-1 text-[12px] text-white'>
                     chỉ có {data.quantity} cái
                   </div>
                 </div>

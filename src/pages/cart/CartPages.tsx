@@ -10,11 +10,12 @@ export default function CartPages() {
     window.scrollTo(0, 0)
   }, [])
   return (
-    <div className='flex flex-col items-center bg-white px-48'>
+    <div className='flex flex-col items-center bg-gray-100/50'>
       <MainHeader />
       <div className='mt-[180px]' />
-      <ShowCart />
-      <div className='my-[100px]'></div>
+      <div className='flex w-full flex-col items-center px-48 pb-8'>
+        <ShowCart />
+      </div>
       <MainFooter />
     </div>
   )

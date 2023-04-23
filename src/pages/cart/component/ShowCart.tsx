@@ -13,7 +13,7 @@ export default function ShowCart() {
   return (
     <div className='grid w-full grid-cols-3'>
       <div className='col-span-2 mr-4'>
-        <div className='mb-2 w-full bg-gray-100 p-4'>
+        <div className='mb-2 w-full bg-white p-4'>
           <p className='pb-4 text-[18px] font-bold'>Tóm tắt mặt hàng (0)</p>
           <div className='grid w-full grid-cols-5'>
             <div className='col-span-1 flex items-center'>
@@ -34,7 +34,7 @@ export default function ShowCart() {
             </div>
           </div>
         </div>
-        <div className='mb-4 flex items-center bg-gray-100 p-4'>
+        <div className='mb-4 flex items-center bg-white p-4'>
           <CheckboxButton id='cart-item-check-all' title='' />
           <div className='flex items-center'>
             <svg
@@ -56,7 +56,7 @@ export default function ShowCart() {
         </div>
         {productIsStock.map((cartData, index) => {
           return (
-            <div key={index} className='relative flex bg-gray-100 p-4'>
+            <div key={index} className='relative flex bg-white p-4'>
               <CheckboxButton id='large-cart-item-shop' title='' />
               <div className='relative'>
                 <img src={cartData.image} alt='' className='w-[116px] object-cover' />
@@ -94,7 +94,7 @@ export default function ShowCart() {
           </div>
           {productIsOutOfStock.map((cartData, index) => {
             return (
-              <div key={index} className='relative flex bg-gray-100 p-4'>
+              <div key={index} className='relative flex bg-white p-4'>
                 <CheckboxButton id='large-cart-item-shop' title='' disable />
                 <div className='relative'>
                   <img src={cartData.image} alt='' className='w-[116px] object-cover' />
@@ -122,7 +122,7 @@ export default function ShowCart() {
         </div>
       </div>
       <div className='col-span-1 w-full '>
-        <div className='w-full bg-gray-100 p-8'>
+        <div className='w-full bg-white p-8'>
           <p className='text-[20px] font-bold'>Tóm tắt đơn hàng</p>
           <div className='mb-4 flex items-center justify-between'>
             <p className='text-[12px] text-black'>Tạm tính</p>
