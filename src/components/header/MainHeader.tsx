@@ -64,8 +64,8 @@ export default function MainHeader() {
             {Object.keys(categories).map((categoryTitle, index) => (
               <p
                 className={`cursor-pointer ${
-                  index === indexSelected ? 'bg-white' : 'hover:bg-gray-200'
-                } px-2 py-4 font-medium text-gray-600 `}
+                  index === indexSelected ? 'bg-white text-black' : 'text-gray-600 hover:bg-gray-200 '
+                } px-2 py-4 font-medium`}
                 key={categoryTitle}
                 onClick={() => {
                   handleGetListCategoriesTitle(categoryTitle)
@@ -87,7 +87,7 @@ export default function MainHeader() {
           <div className='col-span-2 flex items-center justify-start'>
             <ShippingInfo />
           </div>
-          <div className='col-span-3 flex items-center justify-start'>
+          <div className='col-span-3 flex items-center justify-end'>
             <InfoUser />
           </div>
         </div>
