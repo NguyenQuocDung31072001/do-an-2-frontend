@@ -5,14 +5,36 @@ import CheckboxButton from '../button/CheckBoxButton'
 import { useNavigate } from 'react-router-dom'
 import { QuantityController } from './QuantityController'
 import { convertToVNPrice } from '../../utils/string'
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
+import useCheckScrollDirection, { EnumDirection } from '../../hook/useCheckScrollDirection'
 
 export default function MiniCart() {
+  const [positionHeader, setPositionHeader] = React.useState('0px')
   const navigate = useNavigate()
   const root = document.getElementById('root') as HTMLElement
   const totalPrice = 0
-  return (
-    <div>
-      <div className='max-h-[500px] overflow-y-scroll'>
+
+  const { scrollY } = useScroll()
+  const { direction } = useCheckScrollDirection()
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    if (latest > 500) {
+      if (direction === EnumDirection.UP) {
+        setPositionHeader('0px')
+      } else {
+        setPositionHeader('-110px')
+      }
+    } else {
+      setPositionHeader('0px')
+    }
+  })
+
+  return ReactDOM.createPortal(
+    <motion.div
+      animate={{ translateY: positionHeader }}
+      transition={{ duration: 0.2 }}
+      className='fixed top-[105px] right-0 z-50  w-[380px] bg-white p-4 shadow-xl'
+    >
+      <div className=' max-h-[500px] overflow-y-scroll'>
         <div className='flex w-[100px]'>
           <CheckboxButton id='mini-cart' title='' />
           <div className='flex items-center'>
@@ -80,24 +102,7 @@ export default function MiniCart() {
       >
         <p>Xem giỏ hàng</p>
       </div>
-    </div>
-  )
-  return ReactDOM.createPortal(
-    <div className='z-auto bg-white'>
-      {CartMockData.map((data, index) => {
-        return (
-          <div key={index} className='flex'>
-            <div>
-              <img src={data.image} alt='' className='h-[120px] w-[90px] object-cover' />
-            </div>
-            <div>
-              <p>{data.productName}</p>
-              <p>{data.price}</p>
-            </div>
-          </div>
-        )
-      })}
-    </div>,
+    </motion.div>,
     root
   )
 }

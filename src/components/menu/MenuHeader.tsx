@@ -8,11 +8,7 @@ export default function MenuHeader() {
   return (
     <div onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)} className='relative'>
       <CartIcon className='h-full w-10 py-4 px-2 font-bold text-gray-500' />
-      {open && (
-        <div className='absolute left-[-200px] w-[380px] bg-white p-4 shadow-xl'>
-          <MiniCart />
-        </div>
-      )}
+      {open && <MiniCart />}
     </div>
   )
 }
