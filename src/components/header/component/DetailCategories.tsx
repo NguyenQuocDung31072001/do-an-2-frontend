@@ -22,6 +22,7 @@ export default function DetailCategories({ listCategoriesTitle }: IDetaiCategori
             <div
               key={index}
               onMouseEnter={() => setCategoryInfoSelected(categoryItem)}
+              onMouseLeave={() => setCategoryInfoSelected({} as IFakeDataCategories)}
               className='relative w-full cursor-pointer'
             >
               <div
