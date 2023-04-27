@@ -3,6 +3,7 @@ import { IMockProductSaleData } from '../../mocks/product/productSale'
 import BoltIcon from '../../icon/BoltIcon'
 import { useNavigate } from 'react-router-dom'
 import { convertToVNPrice } from '../../utils/string'
+import { PathRouter } from '../../constant/path.router'
 
 interface IProps {
   productFlashSale: IMockProductSaleData
@@ -14,7 +15,7 @@ export default function ProductFlashSale({ productFlashSale }: IProps) {
   const percentCurrentQuantityOfTotal = (productFlashSale.currentQuantity / productFlashSale.totalQuantity) * 100
 
   return (
-    <div className='px-2 ' onClick={() => navigate('/product-detail')}>
+    <div className='px-2 ' onClick={() => navigate(PathRouter.PRODUCT.PEODUCT_DETAIL)}>
       <div className='relative cursor-pointer'>
         <img src={productFlashSale.imageProduct[0] || ''} alt='' />
         <div className='absolute right-0 top-0'>

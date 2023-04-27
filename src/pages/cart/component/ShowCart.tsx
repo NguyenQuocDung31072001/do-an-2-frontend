@@ -4,6 +4,7 @@ import { CartMockData } from '../../../mocks/cart/CartMockData'
 import { QuantityController } from '../../../components/cart/QuantityController'
 import { convertToVNPrice } from '../../../utils/string'
 import { useNavigate } from 'react-router-dom'
+import { PathRouter } from '../../../constant/path.router'
 
 export default function ShowCart() {
   const navigate = useNavigate()
@@ -67,7 +68,7 @@ export default function ShowCart() {
               <div className='ml-2 w-full'>
                 <p
                   className='w-auto cursor-pointer text-[14px] hover:font-bold'
-                  onClick={() => navigate('/product-detail')}
+                  onClick={() => navigate(PathRouter.PRODUCT.PEODUCT_DETAIL)}
                 >
                   {cartData.productName}
                 </p>

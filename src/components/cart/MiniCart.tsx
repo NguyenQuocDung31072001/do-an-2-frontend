@@ -7,6 +7,7 @@ import { QuantityController } from './QuantityController'
 import { convertToVNPrice } from '../../utils/string'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import useCheckScrollDirection, { EnumDirection } from '../../hook/useCheckScrollDirection'
+import { PathRouter } from '../../constant/path.router'
 
 export default function MiniCart() {
   const [positionHeader, setPositionHeader] = React.useState('0px')
@@ -70,7 +71,7 @@ export default function MiniCart() {
                   <p
                     className='cursor-pointer text-[12px] text-gray-400'
                     onClick={() => {
-                      navigate('/product-detail')
+                      navigate(PathRouter.PRODUCT.PEODUCT_DETAIL)
                     }}
                   >
                     {data.productName}
@@ -98,7 +99,7 @@ export default function MiniCart() {
       </div>
       <div
         className='mt-4 flex cursor-pointer items-center justify-center bg-black py-2 text-white'
-        onClick={() => navigate('/cart')}
+        onClick={() => navigate(PathRouter.CART)}
       >
         <p>Xem giỏ hàng</p>
       </div>

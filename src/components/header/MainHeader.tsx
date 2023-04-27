@@ -18,6 +18,7 @@ import { categories, IFakeDataCategories } from '../../mocks/category/categories
 import DetailCategoryInfo from './component/DetailCategoryInfo'
 import { MainHeaderContextProvider } from '../../context/MainHeaderContext'
 import { useNavigate } from 'react-router-dom'
+import { PathRouter } from '../../constant/path.router'
 
 export default function MainHeader() {
   //useState
@@ -79,7 +80,7 @@ export default function MainHeader() {
           <div
             className='col-span-2 flex cursor-pointer items-center justify-center text-[24px] font-bold text-gray-800'
             onClick={() => {
-              navigate('/')
+              navigate(PathRouter.HOME)
             }}
           >
             Đồ án 2

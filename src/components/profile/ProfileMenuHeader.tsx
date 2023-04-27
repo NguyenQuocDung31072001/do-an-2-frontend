@@ -4,6 +4,8 @@ import CheckboxButton from '../button/CheckBoxButton'
 import { CartMockData } from '../../mocks/cart/CartMockData'
 import { QuantityController } from '../cart/QuantityController'
 import { convertToVNPrice } from '../../utils/string'
+import { useNavigate } from 'react-router-dom'
+import { PathRouter } from '../../constant/path.router'
 
 const listMenu = [
   {
@@ -36,12 +38,17 @@ const listMenu = [
   }
 ]
 export default function ProfileMenuHeader() {
+  const navigate = useNavigate()
+
   const [nameSelected, setNameSelected] = React.useState<string>('')
   const root = document.getElementById('root') as HTMLElement
 
   return ReactDOM.createPortal(
     <div className='fixed right-6 top-[105px] z-50 w-[200px] bg-white shadow-xl'>
-      <div className='mx-4 my-2 cursor-pointer border-b-[1px] border-gray-300 pb-2'>
+      <div
+        className='mx-4 my-2 cursor-pointer border-b-[1px] border-gray-300 pb-2'
+        onClick={() => navigate(PathRouter.USER.INDEX)}
+      >
         <p className='text-[12px] font-semibold text-black'>dungnguyen320701</p>
       </div>
       <div className=''>
