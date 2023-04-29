@@ -2,7 +2,7 @@ import React from 'react'
 import MinusIcon from '../../../icon/MinusIcon'
 import PlusIcon from '../../../icon/PlusIcon'
 import { motion } from 'framer-motion'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { PathRouter } from '../../../constant/path.router'
 import { useLocation } from 'react-router-dom'
 
@@ -14,7 +14,8 @@ export default function Submenu({
     subTitle: string[]
   }
 }) {
-  const [isExpand, setIsExpand] = React.useState<boolean>(false)
+  const [isFirstRender, setIsFirstRender] = React.useState<boolean>(true)
+  const [isExpand, setIsExpand] = React.useState<boolean>(true)
   let location = useLocation()
 
   const generateNavLink = (name: string) => {
@@ -29,9 +30,18 @@ export default function Submenu({
     }
     return url
   }
+
   return (
     <div className='py-2'>
-      <div className='flex cursor-pointer items-center justify-between ' onClick={() => setIsExpand(!isExpand)}>
+      <div
+        className='flex cursor-pointer items-center justify-between '
+        onClick={() => {
+          setIsExpand(!isExpand)
+          // if (isFirstRender) {
+          //   setIsFirstRender(false)
+          // }
+        }}
+      >
         <p className='text-[16px] font-bold text-black'>{menuItem.title}</p>
         {isExpand ? <PlusIcon className='h-4 w-4 text-[12px] font-bold' /> : <MinusIcon className='h-4 w-4' />}
       </div>
@@ -40,8 +50,13 @@ export default function Submenu({
         initial={{ height: isExpand ? '0px' : '100%' }}
         animate={{ height: isExpand ? '100%' : '0px' }}
         exit={{ height: isExpand ? '0px' : '100%' }}
+        // {...(true && {
+        //   initial: { height: isExpand ? '0px' : '100%' },
+        //   animate: { height: isExpand ? '100%' : '0px' },
+        //   exit: { height: isExpand ? '0px' : '100%' }
+        // })}
         transition={{ duration: 0.5 }}
-        className='w-full overflow-hidden'
+        className={`w-full overflow-hidden`}
       >
         {menuItem.subTitle.map((menuSubItem, index) => {
           return (
@@ -57,12 +72,6 @@ export default function Submenu({
               >
                 {menuSubItem}
               </NavLink>
-              {/* <p
-                className='cursor-pointer text-[14px] text-gray-600 hover:text-black'
-                onClick={() => handleClick(menuSubItem)}
-              >
-                {menuSubItem}
-              </p> */}
             </div>
           )
         })}

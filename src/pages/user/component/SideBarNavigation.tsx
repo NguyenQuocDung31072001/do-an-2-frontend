@@ -1,5 +1,4 @@
 import React from 'react'
-import MinusIcon from '../../../icon/MinusIcon'
 import Submenu from './Submenu'
 
 const Menu = [
