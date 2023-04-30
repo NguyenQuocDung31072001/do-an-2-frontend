@@ -1,5 +1,5 @@
 import React from 'react'
-import Submenu from './Submenu'
+import SubMenu from './SubMenu'
 
 const Menu = [
   {
@@ -52,7 +52,7 @@ export default function SideBarNavigation() {
   return (
     <div className='px-4'>
       {menuList.map((menuItem, index) => {
-        return <Submenu key={index} menuItem={menuItem} />
+        return <SubMenu key={index} menuItem={menuItem} />
       })}
     </div>
   )

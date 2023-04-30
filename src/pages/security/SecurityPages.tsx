@@ -1,4 +1,5 @@
 import React from 'react'
+import ChangePassword from './component/ChangePassword'
 
 export default function SecurityPages() {
   return (
@@ -19,17 +20,7 @@ export default function SecurityPages() {
         </div>
       </div>
       <div className='my-8 h-[1px] w-full bg-gray-300'></div>
-      <div>
-        <div className='flex w-full justify-start'>
-          <p className='font-bold text-black'>Đổi Mật Khẩu</p>
-        </div>
-        <div className='flex justify-between'>
-          <p className='text-gray-500'>********</p>
-          <div className='mr-4 flex w-[120px] cursor-pointer justify-center border-[1px] border-black bg-white px-4 py-1 text-[14px] font-semibold text-black duration-200 hover:bg-gray-200'>
-            Thay Đổi
-          </div>
-        </div>
-      </div>
+      <ChangePassword />
       <div className='my-8 h-[1px] w-full bg-gray-300'></div>
       <div>
         <div className='flex w-full justify-start'>

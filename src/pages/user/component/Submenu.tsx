@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import { PathRouter } from '../../../constant/path.router'
 import { useLocation } from 'react-router-dom'
 
-export default function Submenu({
+export default function SubMenu({
   menuItem
 }: {
   menuItem: {
