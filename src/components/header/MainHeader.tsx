@@ -15,7 +15,6 @@ import useCheckScrollDirection, { EnumDirection } from '../../hook/useCheckScrol
 
 //mocks
 import { categories, IFakeDataCategories } from '../../mocks/category/categories'
-import DetailCategoryInfo from './component/DetailCategoryInfo'
 import { MainHeaderContextProvider } from '../../context/MainHeaderContext'
 import { useNavigate } from 'react-router-dom'
 import { PathRouter } from '../../constant/path.router'
@@ -52,7 +51,7 @@ export default function MainHeader() {
       <motion.div
         animate={{ translateY: positionHeader }}
         transition={{ duration: 0.2 }}
-        className='fixed top-0 z-50 flex w-full flex-col items-center justify-center'
+        className='fixed top-0 z-40 flex w-full flex-col items-center justify-center'
       >
         <div>
           <img

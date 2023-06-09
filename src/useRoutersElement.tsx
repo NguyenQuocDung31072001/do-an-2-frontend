@@ -21,7 +21,7 @@ function WrapperPageContainer() {
   return (
     <>
       <MainHeader />
-      <div className='mt-[180px]' w-full />
+      <div className='mt-[180px] ' w-full />
       <Outlet />
       <MainFooter />
     </>

@@ -1,14 +1,13 @@
 import React from 'react'
 
 //component
-import MainHeader from '../../components/header/MainHeader'
-import MainFooter from '../../components/footer/MainFooter'
 import SaleOffAnnouncement from './component/SaleOffAnnouncement'
 import FlashSale from './component/FlashSale'
 import NewProduct from './component/NewProduct'
 import { useNavigate } from 'react-router-dom'
 import ChevronRightIcon from '../../icon/chevron/ChevronRightIcon'
 import { PathRouter } from '../../constant/path.router'
+import DiscountModal from '../../components/modal/DiscountModal'
 
 export default function HomePages() {
   const navigate = useNavigate()
@@ -20,6 +19,7 @@ export default function HomePages() {
 
   return (
     <div className='mb-8 flex w-full flex-col items-center px-16'>
+      <DiscountModal />
       <SaleOffAnnouncement />
       <FlashSale />
       <NewProduct />
