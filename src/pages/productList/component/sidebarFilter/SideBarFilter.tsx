@@ -5,7 +5,7 @@ import FilterWrapperItem from './component/FilterWarpperItem'
 
 export default function SideBarFilter() {
   return (
-    <div className='h-[800px] w-[250px] overflow-y-scroll border-t-[1px] border-gray-200 p-4'>
+    <div className='w-[250px] border-t-[1px] border-gray-200 p-4'>
       {Object.keys(MocksDataFilter).map((nameHeaderFilter, index) => {
         return (
           <div key={index}>
