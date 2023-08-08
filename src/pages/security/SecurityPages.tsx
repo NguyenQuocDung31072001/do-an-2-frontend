@@ -1,5 +1,6 @@
 import React from 'react'
 import ChangePassword from './component/ChangePassword'
+import { PathRouter } from '../../constant/path.router'
 
 export default function SecurityPages() {
   return (

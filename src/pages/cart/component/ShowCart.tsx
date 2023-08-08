@@ -68,7 +68,7 @@ export default function ShowCart() {
               <div className='ml-2 w-full'>
                 <p
                   className='w-auto cursor-pointer text-[14px] hover:font-bold'
-                  onClick={() => navigate(PathRouter.PRODUCT.PEODUCT_DETAIL)}
+                  onClick={() => navigate(PathRouter.PRODUCT.PRODUCT_DETAIL)}
                 >
                   {cartData.productName}
                 </p>

@@ -14,7 +14,6 @@ export default function SubMenu({
     subTitle: string[]
   }
 }) {
-  const [isFirstRender, setIsFirstRender] = React.useState<boolean>(true)
   const [isExpand, setIsExpand] = React.useState<boolean>(true)
   let location = useLocation()
 

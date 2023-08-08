@@ -15,7 +15,7 @@ export default function ProductFlashSale({ productFlashSale }: IProps) {
   const percentCurrentQuantityOfTotal = (productFlashSale.currentQuantity / productFlashSale.totalQuantity) * 100
 
   return (
-    <div className='px-2 ' onClick={() => navigate(PathRouter.PRODUCT.PEODUCT_DETAIL)}>
+    <div className='px-2 ' onClick={() => navigate(PathRouter.PRODUCT.PRODUCT_DETAIL)}>
       <div className='relative cursor-pointer'>
         <img src={productFlashSale.imageProduct[0] || ''} alt='' />
         <div className='absolute right-0 top-0'>

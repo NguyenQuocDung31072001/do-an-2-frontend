@@ -71,7 +71,7 @@ export default function MiniCart() {
                   <p
                     className='cursor-pointer text-[12px] text-gray-400'
                     onClick={() => {
-                      navigate(PathRouter.PRODUCT.PEODUCT_DETAIL)
+                      navigate(PathRouter.PRODUCT.PRODUCT_DETAIL)
                     }}
                   >
                     {data.productName}

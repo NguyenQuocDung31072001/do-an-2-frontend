@@ -1,6 +1,7 @@
 import React, { PropsWithChildren, createContext } from 'react'
 
 interface AppContentProps {}
+
 const AppContext = createContext<AppContentProps>({} as AppContentProps)
 
 export const useAppContext = () => {
@@ -9,5 +10,6 @@ export const useAppContext = () => {
 
 export const AppContextProvider: React.FC<Pick<PropsWithChildren<AppContentProps>, 'children'>> = ({ children }) => {
   const values = {}
+
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>
 }

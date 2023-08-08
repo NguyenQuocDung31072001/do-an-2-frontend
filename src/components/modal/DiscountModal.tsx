@@ -41,7 +41,7 @@ export default function DiscountModal() {
   )
   const renderContent = (
     <div className='h-[400px] overflow-hidden overflow-y-scroll overscroll-contain'>
-      <div className='mx-4'>
+      <div className='mx-8'>
         {contentData.map((data, index) => {
           return (
             <div key={index} className='my-4 border-t-4 border-red-400 bg-orange-50 py-2 px-4'>
@@ -76,7 +76,7 @@ export default function DiscountModal() {
         className='fixed top-0 z-40 flex h-[100vh] w-[100vw] items-center justify-center bg-black/40'
         onClick={() => setOpen(!open)}
       ></div>
-      <div className='fixed top-[50%] left-[50%] z-50 translate-x-[-50%] translate-y-[-50%] bg-gradient-to-b from-pink-300 to-pink-400 p-4'>
+      <div className='fixed top-[50%] left-[50%] z-50 translate-x-[-50%] translate-y-[-50%] bg-gradient-to-b from-pink-300 to-pink-400 py-4 px-2'>
         <div className='flex justify-end'>
           <XIcon className='h-4 w-4 cursor-pointer' onClick={() => setOpen(!open)} />
         </div>
