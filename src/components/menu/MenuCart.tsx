@@ -2,7 +2,7 @@ import React from 'react'
 import CartIcon from '../../icon/CartIcon'
 import MiniCart from '../cart/MiniCart'
 
-export default function MenuHeader() {
+export default function MenuCartNavigate() {
   const [open, setOpen] = React.useState<boolean>(false)
 
   return (

@@ -1,8 +1,6 @@
 import React from 'react'
 import ProfileMenuHeader from '../profile/ProfileMenuHeader'
 import ProfileIcon from '../../icon/ProfileIcon'
-import MiniCart from '../cart/MiniCart'
-import CartIcon from '../../icon/CartIcon'
 
 export default function MenuProfileIcon() {
   const [open, setOpen] = React.useState<boolean>(false)

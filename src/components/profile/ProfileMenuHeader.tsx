@@ -1,13 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import CheckboxButton from '../button/CheckBoxButton'
-import { CartMockData } from '../../mocks/cart/CartMockData'
-import { QuantityController } from '../cart/QuantityController'
-import { convertToVNPrice } from '../../utils/string'
 import { useNavigate } from 'react-router-dom'
 import { PathRouter } from '../../constant/path.router'
 
-const listMenu = [
+const _listMenu = [
   {
     name: 'Thông tin của tôi',
     url: ''
@@ -37,6 +33,17 @@ const listMenu = [
     url: ''
   }
 ]
+const listMenu = [
+  {
+    name: 'Tài khoản của tôi',
+    url: PathRouter.USER.INDEX
+  },
+
+  {
+    name: 'Shop của tôi',
+    url: PathRouter.USER.INDEX
+  }
+]
 export default function ProfileMenuHeader() {
   const navigate = useNavigate()
 
@@ -59,6 +66,7 @@ export default function ProfileMenuHeader() {
               className={`cursor-pointer px-4 py-1 `}
               onMouseEnter={() => setNameSelected(menu.name)}
               onMouseLeave={() => setNameSelected('')}
+              onClick={() => navigate(menu.url)}
             >
               <p className={`text-[12px] ${nameSelected === menu.name ? 'text-black' : 'text-gray-500'}`}>
                 {menu.name}

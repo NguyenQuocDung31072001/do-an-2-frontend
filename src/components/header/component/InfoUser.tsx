@@ -3,8 +3,7 @@ import React from 'react'
 //icon
 import GlobalIcon from '../../../icon/GlobalIcon'
 import HeartIcon from '../../../icon/HeartIcon'
-import ProfileIcon from '../../../icon/ProfileIcon'
-import MenuHeader from '../../menu/MenuHeader'
+import MenuCartNavigate from '../../menu/MenuCart'
 import MenuProfileIcon from '../../menu/MenuProfileIcon'
 
 type TypeIcon = 'Profile' | 'Menu' | 'Heart' | 'Global' | ''
@@ -25,7 +24,7 @@ export default function InfoUser() {
         className={`cursor-pointer px-2 font-medium ${active === 'Menu' ? 'bg-white' : ''}`}
         onMouseEnter={() => setActive('Menu')}
       >
-        <MenuHeader />
+        <MenuCartNavigate />
       </div>
       <div
         className={`cursor-pointer px-2 font-medium ${active === 'Heart' ? 'bg-white' : ''}`}
