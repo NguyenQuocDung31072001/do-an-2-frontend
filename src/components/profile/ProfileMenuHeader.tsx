@@ -36,12 +36,18 @@ const _listMenu = [
 const listMenu = [
   {
     name: 'Tài khoản của tôi',
-    url: PathRouter.USER.INDEX
+    url: PathRouter.USER.INDEX,
+    isBlank: false
   },
-
   {
     name: 'Shop của tôi',
-    url: PathRouter.USER.INDEX
+    url: PathRouter.MY_SHOP,
+    isBlank: true
+  },
+  {
+    name: 'Đăng kí shop',
+    url: PathRouter.REGISTER_NEW_SHOP,
+    isBlank: true
   }
 ]
 export default function ProfileMenuHeader() {
@@ -66,7 +72,13 @@ export default function ProfileMenuHeader() {
               className={`cursor-pointer px-4 py-1 `}
               onMouseEnter={() => setNameSelected(menu.name)}
               onMouseLeave={() => setNameSelected('')}
-              onClick={() => navigate(menu.url)}
+              onClick={() => {
+                if (menu.isBlank) {
+                  window.open(menu.url, '_blank', 'noopener,noreferrer')
+                } else {
+                  navigate(menu.url)
+                }
+              }}
             >
               <p className={`text-[12px] ${nameSelected === menu.name ? 'text-black' : 'text-gray-500'}`}>
                 {menu.name}

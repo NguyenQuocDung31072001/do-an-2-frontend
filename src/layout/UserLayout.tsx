@@ -12,7 +12,7 @@ export default function UserLayout() {
   const generateItemBreadcrumb = useGenerateBreadcrumUserLayout()
 
   return (
-    <div>
+    <div className='mt-64'>
       <MainHeader />
       <Breadcrumb items={generateItemBreadcrumb} />
       <div className='my-8 grid w-full grid-cols-12 px-32'>

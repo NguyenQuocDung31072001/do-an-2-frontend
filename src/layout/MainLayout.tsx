@@ -9,13 +9,13 @@ export default function MainLayout() {
   const generateItemBreadcrumb = useGenerateBreadcrumMainLayout()
 
   return (
-    <>
+    <div className='mt-64'>
       <MainHeader />
       <div className='mt-[180px] ' />
       <Breadcrumb items={generateItemBreadcrumb} />
       <div className='my-8' />
       <Outlet />
       <MainFooter />
-    </>
+    </div>
   )
 }
