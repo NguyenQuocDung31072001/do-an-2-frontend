@@ -2,6 +2,7 @@ import { Button, Table } from 'antd'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { PathRouter } from '../../constant/path.router'
+import { Helmet } from 'react-helmet-async'
 
 export default function ShopProductList() {
   const navigate = useNavigate()
@@ -40,6 +41,9 @@ export default function ShopProductList() {
   ]
   return (
     <div className='p-4'>
+      <Helmet>
+        <title>Danh sách sản phẩm</title>
+      </Helmet>
       <p className='text-[18px] font-semibold'>Danh sách sản phẩm</p>
       <div className='flex justify-end'>
         <Button onClick={() => navigate(PathRouter.SHOP_ADD_PRODUCT)}>Thêm sản phẩm</Button>

@@ -1,6 +1,7 @@
 import { Form, Input, InputNumber, Select } from 'antd'
 import React from 'react'
 import ProductImageUpload from './component/ProductImageUpload'
+import { Helmet } from 'react-helmet-async'
 
 /**
  * name
@@ -23,6 +24,9 @@ const { TextArea } = Input
 export default function ShopAddProduct() {
   return (
     <Form name='add_new_product'>
+      <Helmet>
+        <title>Tạo mới sản phẩm</title>
+      </Helmet>
       <div className='grid grid-cols-2'>
         <div className='col-span-1 mx-2 h-[600px] overflow-y-scroll bg-white py-8 px-4 shadow-lg'>
           <p className='text-[16px] font-semibold'>Description</p>
