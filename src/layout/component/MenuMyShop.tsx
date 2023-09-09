@@ -30,9 +30,9 @@ const items: MenuProps['items'] = [
     null,
     [
       getItem('Hồ sơ shop', PathRouter.MY_SHOP.split('/')[2], <ProfileOutlined />),
-      getItem('Cài đặt vận chuyển shop', '2', <CarOutlined />),
-      getItem('Địa chỉ shop', '3', <HomeOutlined />),
-      getItem('Đánh giá shop', '4', <BarChartOutlined />),
+      // getItem('Cài đặt vận chuyển shop', '2', <CarOutlined />),
+      // getItem('Địa chỉ shop', '3', <HomeOutlined />),
+      // getItem('Đánh giá shop', '4', <BarChartOutlined />),
       getItem('Tài khoản / Thẻ ngân hàng', '5', <BankOutlined />)
     ],
     'group'
@@ -42,9 +42,9 @@ const items: MenuProps['items'] = [
     'setting',
     null,
     [
-      getItem('Thiết lập shop', '6', <BankOutlined />),
-      getItem('Cài đặt chat', '7', <BankOutlined />),
-      getItem('Cài đặt thông báo', '8', <BankOutlined />)
+      getItem('Thiết lập shop', '6', <BankOutlined />)
+      // getItem('Cài đặt chat', '7', <BankOutlined />),
+      // getItem('Cài đặt thông báo', '8', <BankOutlined />)
     ],
     'group'
   ),
@@ -76,7 +76,7 @@ const MenuMyShop: React.FC = () => {
   }
 
   return (
-    <div className='flex h-[calc(100%+100px)] flex-col justify-center '>
+    <div className='flex h-[calc(100%+100px)] flex-col justify-start '>
       <Menu
         onClick={onClick}
         style={{ width: 256 }}

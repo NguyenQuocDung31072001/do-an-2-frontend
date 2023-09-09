@@ -14,7 +14,7 @@ export default function ShopLayout() {
       <MyShopHeader />
 
       <div className='mx-4 grid grid-cols-8'>
-        <div className='col-span-2 flex h-[600px] justify-center overflow-y-scroll rounded-lg bg-white px-4 shadow-lg '>
+        <div className='col-span-2 flex h-[600px] justify-center  overflow-y-scroll rounded-lg bg-white px-4 shadow-lg '>
           <div className='h-10 w-full' />
           <MenuMyShop />
         </div>
