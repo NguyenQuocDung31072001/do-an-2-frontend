@@ -3,6 +3,7 @@ import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import useCheckScrollDirection, { EnumDirection } from '../../hook/useCheckScrollDirection'
 import { useNavigate } from 'react-router-dom'
 import { PathRouter } from '../../constant/path.router'
+import NotificationHeader from './component/shop_header/NotificationHeader'
 
 export default function MyShopHeader() {
   const [positionHeader, setPositionHeader] = React.useState('0px')
@@ -35,20 +36,7 @@ export default function MyShopHeader() {
           <span>{`> Shop của tôi`}</span>
         </div>
         <div className='flex items-center'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            strokeWidth={1.5}
-            stroke='currentColor'
-            className='h-6 w-6 text-white'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0'
-            />
-          </svg>
+          <NotificationHeader />
           <img
             src='https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80'
             alt=''
