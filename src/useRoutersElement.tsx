@@ -23,6 +23,7 @@ import ShopLayout from './layout/ShopLayout'
 
 //constant
 import { PathRouter } from './constant/path.router'
+import ShopProductList from './pages/shop_product_list/ShopProductList'
 
 export default function useRoutersElement() {
   const routerElement = useRoutes([
@@ -65,7 +66,8 @@ export default function useRoutersElement() {
       element: <ShopLayout />,
       children: [
         { path: PathRouter.MY_SHOP, element: <MyShopPages /> },
-        { path: PathRouter.SHOP_ADD_PRODUCT, element: <ShopAddProduct /> }
+        { path: PathRouter.SHOP_ADD_PRODUCT, element: <ShopAddProduct /> },
+        { path: PathRouter.SHOP_PRODUCT_LIST, element: <ShopProductList /> }
       ]
     },
     {

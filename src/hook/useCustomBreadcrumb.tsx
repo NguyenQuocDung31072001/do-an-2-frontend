@@ -32,6 +32,23 @@ export function useCustomBreadcrumb() {
     },
     getRouteAccountSecurity: () => {
       return 'Quản lý tài khoản của tôi'
+    },
+
+    //shop
+    getRouteShopProductList: ({ isText }: { isText?: boolean }) => {
+      const label = 'Danh sách sản phẩm'
+      if (isText) {
+        return label
+      }
+      return <Link to={PathRouter.SHOP_PRODUCT_LIST}>{label}</Link>
+    },
+
+    getRouteShopNewProduct: ({ isText }: { isText?: boolean }) => {
+      const label = 'Tạo mới sản phẩm'
+      if (isText) {
+        return label
+      }
+      return <Link to={PathRouter.SHOP_ADD_PRODUCT}>{label}</Link>
     }
   }
 }

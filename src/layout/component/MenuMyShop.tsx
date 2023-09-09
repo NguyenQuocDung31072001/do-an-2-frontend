@@ -56,10 +56,13 @@ const items: MenuProps['items'] = [
     'group'
   ),
   getItem(
-    'Sản phẩm',
-    'product',
+    'Quản lý sản phẩm',
+    'manage_product',
     null,
-    [getItem('Thêm mới sản phẩm', PathRouter.SHOP_ADD_PRODUCT.split('/')[2], <BankOutlined />)],
+    [
+      getItem('Danh sách sản phẩm', PathRouter.SHOP_PRODUCT_LIST.split('/')[2], <BankOutlined />)
+      // getItem('Thêm mới sản phẩm', PathRouter.SHOP_ADD_PRODUCT.split('/')[2], <BankOutlined />)
+    ],
     'group'
   )
 ]
@@ -73,14 +76,16 @@ const MenuMyShop: React.FC = () => {
   }
 
   return (
-    <Menu
-      onClick={onClick}
-      style={{ width: 256 }}
-      defaultSelectedKeys={['1']}
-      defaultOpenKeys={['sub1']}
-      mode='inline'
-      items={items}
-    />
+    <div className='flex h-[calc(100%+100px)] flex-col justify-center '>
+      <Menu
+        onClick={onClick}
+        style={{ width: 256 }}
+        defaultSelectedKeys={['1']}
+        defaultOpenKeys={['sub1']}
+        mode='inline'
+        items={items}
+      />
+    </div>
   )
 }
 
