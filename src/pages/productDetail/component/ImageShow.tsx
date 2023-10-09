@@ -33,19 +33,21 @@ export default function ImageShow() {
 
   return (
     <div className='grid grid-cols-10'>
-      <div className='col-span-1'>
+      <div className='col-span-2'>
         {Images.map((image, index) => {
           const className =
-            image === imageSelected ? 'my-2 border-[1px] border-gray-600 p-[1px] cursor-pointer' : 'my-2 p-[1px]'
+            image === imageSelected
+              ? 'my-2 border-[1px] border-gray-600 p-[1px] cursor-pointer w-[80px] h-[100px]'
+              : 'my-2 p-[1px] w-[80px] h-[100px]'
           return (
             <div key={index} className={className} onMouseEnter={() => setImageSelected(image)}>
-              <img src={image} alt='' className='object-cover' />
+              <img src={image} alt='' className='h-full w-full object-cover' />
             </div>
           )
         })}
       </div>
       <div
-        className='relative col-span-9 mx-4 h-[600px] w-full overflow-hidden'
+        className='relative col-span-8 mx-4 h-[600px] w-full overflow-hidden'
         onMouseMove={handleZoomIn}
         onMouseLeave={handleZoomOut}
       >

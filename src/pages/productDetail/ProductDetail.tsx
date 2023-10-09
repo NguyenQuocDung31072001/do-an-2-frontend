@@ -4,9 +4,6 @@ import DropdownCategory from '../../components/dropdown/DropdownCategory'
 import ProductRating from '../../components/ProductRating'
 import LikeSolidIcon from '../../icon/LikeSolidIcon'
 import React from 'react'
-import { PathRouter } from '../../constant/path.router'
-import { Breadcrumb } from 'antd'
-import { Link } from 'react-router-dom'
 
 const Comments = [
   {

@@ -1,3 +1,4 @@
+import { ConfigProvider } from 'antd'
 import './App.css'
 import { AppContextProvider } from './context/AppContext'
 import useRoutersElement from './useRoutersElement'
@@ -8,7 +9,9 @@ function App() {
   return (
     <div className=''>
       <HelmetProvider>
-        <AppContextProvider>{routerElement}</AppContextProvider>
+        <ConfigProvider>
+          <AppContextProvider>{routerElement}</AppContextProvider>
+        </ConfigProvider>
       </HelmetProvider>
     </div>
   )

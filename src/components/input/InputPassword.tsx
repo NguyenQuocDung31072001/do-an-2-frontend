@@ -14,7 +14,7 @@ export default function InputPassword({ title }: IPropsInputPassword) {
         type={visible ? 'text' : 'password'}
         className='w-full border-[1px] border-gray-400 px-4 py-2 text-[12px] text-black hover:border-black focus:outline-none '
       />
-      <div className='absolute right-2 top-7'>
+      <div className='absolute right-2 top-8'>
         {visible ? (
           <EyeOpenIcon className='h-4 w-4 cursor-pointer' onClick={() => setVisible(false)} />
         ) : (
